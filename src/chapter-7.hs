@@ -52,6 +52,11 @@ data Vector a = Vector a a a deriving (Show)
 vplus :: (Num a) => Vector a -> Vector a -> Vector a
 vplus (Vector i j k) (Vector l m n) = Vector (i+l) (j+m) (k+n)
 
+data Person1 = Person1 { first :: String
+                       , last :: String
+                       , agenew :: Int
+                       } deriving (Eq)
+
 
 
 
