@@ -1,6 +1,7 @@
 module Shapes
 ( Point(..)
 , Shape(..)
+, Person1(..)
 , area
 , area'
 , baseCircle
@@ -52,10 +53,13 @@ data Vector a = Vector a a a deriving (Show)
 vplus :: (Num a) => Vector a -> Vector a -> Vector a
 vplus (Vector i j k) (Vector l m n) = Vector (i+l) (j+m) (k+n)
 
-data Person1 = Person1 { first :: String
-                       , last :: String
-                       , agenew :: Int
-                       } deriving (Eq)
+data Person1 = Person1 { first1 :: String
+                       , last1 :: String
+                       , agent1 :: Int
+                       } deriving (Eq, Show, Read)
+
+data Day = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
+         deriving (Eq, Ord, Show, Read, Bounded, Enum)
 
 
 
