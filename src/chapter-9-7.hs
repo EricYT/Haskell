@@ -18,4 +18,4 @@ main = do
     hClose tempHandle
     removeFile "todo.txt"
     renameFile tempName "todo.txt"
-    
+
