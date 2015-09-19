@@ -14,3 +14,8 @@ instance Monad Maybe where
     fail _ = Nothing
 
 
+
+half x = if even x
+           then Just $ div x 2
+           else Nothing
+
