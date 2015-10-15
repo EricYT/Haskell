@@ -2,7 +2,8 @@
 import qualified GHC.Base as Base
 
 str2action :: String -> IO ()
-str2action input = putStrLn $ "Data: " ++ input
+--str2action input = putStrLn $ "Data: " ++ input
+str2action = putStrLn . (++) "Data: "
 
 list2action :: [String] -> [IO ()]
 list2action = map str2action
