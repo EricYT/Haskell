@@ -41,3 +41,26 @@ getFileSize path = handle ((\_ -> return Nothing)::IOException -> IO (Maybe Inte
   bracket (openFile path ReadMode) hClose $ \h -> do
     size <- hFileSize h
     return (Just size)
+
+type InfoP a = FilePath
+             -> Permissions
+             -> Maybe Integer
+             -> UTCTime
+             -> a
+pathP :: InfoP FilePath
+pathP path _ _ _ = path
+
+equalP :: (Eq a) => InfoP a -> a -> InfoP Bool
+equalP f k = \w x y z -> f w x y z == k
+
+equalP' :: (Eq a) => InfoP a -> a -> InfoP Bool
+equalP' f k w x y z = f w x y z == k
+
+
+
+
+
+
+
+
+
