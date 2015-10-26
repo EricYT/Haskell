@@ -18,5 +18,5 @@ cabal-version:       >=1.8
 library
   exposed-modules:     Test.Answer, Test.Say
   -- other-modules:       
-  build-depends:       base ==4.6.*
+  build-depends:       base >= 4.6
   hs-source-dirs:      src

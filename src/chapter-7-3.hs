@@ -23,4 +23,6 @@ treeElem x (Node a left right)
   | x < a = treeElem x left
   | x > a = treeElem x right
 
-
+instance Functor Tree where
+    fmap f EmptyTree = EmptyTree
+    fmap f (Node a l r) = Node (f a) (fmap f l) (fmap f r)
